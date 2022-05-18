@@ -1,0 +1,47 @@
+.TH HSH 1 "2022" "1" "Simple Shell man page"
+.SH NAME
+.B hsh
+- A simple UNIX command interpreter.
+.SH SYNOPSIS
+.B hsh
+.BI [string... [arg][file]]
+.SH DESCRIPTION
+This program is a basic version of a shell command interpreter made as a studying project for Holberton School. It allows the user to use basic shell commands in a prompt using C functions.
+.SS Overview
+The program reads lines from the prompt using getline() function and interprets the input to find the right path to execute the command. You can compile it using : gcc *.c then execute ./a.out
+.SH INPUT
+The followings actions occurs after the input:
+- Splits commands into tokens
+- Search for command PATH
+- Executes using execve() function
+.SH MODES
+.SS
+Example:
+hedy_cherif$> ls -l
+.sp
+hedy_cherif$> env
+.sp
+hedy_cherif$> pwd
+.B
+.SS
+Non-interactive modes
+.SS
+Example:
+$ echo "ls -l" | ./a.out
+
+.SH BUILT-IN COMMANDS
+.SS
+.B env
+- prints environment
+.SS
+.B exit or exit status
+- exits the shell with numeric value
+
+.SH SEE ALSO
+.BR man
+.BR sh
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Robert Mongare
+Samuel kikuvi
